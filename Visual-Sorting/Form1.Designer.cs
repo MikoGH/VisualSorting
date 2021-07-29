@@ -1,7 +1,7 @@
 ﻿
 namespace Visual_Sorting
 {
-	partial class Main_Form
+	partial class formMain
 	{
 		/// <summary>
 		/// Обязательная переменная конструктора.
@@ -29,117 +29,187 @@ namespace Visual_Sorting
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-			this.Main_GroupBox = new System.Windows.Forms.GroupBox();
-			this.Sorting_button = new System.Windows.Forms.Button();
-			this.TypeSorting_comboBox = new System.Windows.Forms.ComboBox();
-			this.Generate_button = new System.Windows.Forms.Button();
-			this.amt_NumUD = new System.Windows.Forms.NumericUpDown();
-			this.sorting_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-			this.Main_GroupBox.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.amt_NumUD)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.sorting_chart)).BeginInit();
+			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			this.gbxMain = new System.Windows.Forms.GroupBox();
+			this.lblAmount = new System.Windows.Forms.Label();
+			this.tbStep = new System.Windows.Forms.TrackBar();
+			this.chartSorting = new System.Windows.Forms.DataVisualization.Charting.Chart();
+			this.nudAmount = new System.Windows.Forms.NumericUpDown();
+			this.btnSorting = new System.Windows.Forms.Button();
+			this.cmbTypeSorting = new System.Windows.Forms.ComboBox();
+			this.btnGenerate = new System.Windows.Forms.Button();
+			this.timerSort = new System.Windows.Forms.Timer(this.components);
+			this.gbxMain.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tbStep)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.chartSorting)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// Main_GroupBox
+			// gbxMain
 			// 
-			this.Main_GroupBox.BackColor = System.Drawing.Color.Azure;
-			this.Main_GroupBox.Controls.Add(this.sorting_chart);
-			this.Main_GroupBox.Controls.Add(this.amt_NumUD);
-			this.Main_GroupBox.Controls.Add(this.Sorting_button);
-			this.Main_GroupBox.Controls.Add(this.TypeSorting_comboBox);
-			this.Main_GroupBox.Controls.Add(this.Generate_button);
-			this.Main_GroupBox.Location = new System.Drawing.Point(12, 12);
-			this.Main_GroupBox.Name = "Main_GroupBox";
-			this.Main_GroupBox.Size = new System.Drawing.Size(546, 455);
-			this.Main_GroupBox.TabIndex = 0;
-			this.Main_GroupBox.TabStop = false;
+			this.gbxMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			this.gbxMain.Controls.Add(this.lblAmount);
+			this.gbxMain.Controls.Add(this.tbStep);
+			this.gbxMain.Controls.Add(this.chartSorting);
+			this.gbxMain.Controls.Add(this.nudAmount);
+			this.gbxMain.Controls.Add(this.btnSorting);
+			this.gbxMain.Controls.Add(this.cmbTypeSorting);
+			this.gbxMain.Controls.Add(this.btnGenerate);
+			this.gbxMain.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.gbxMain.Location = new System.Drawing.Point(12, 12);
+			this.gbxMain.Name = "gbxMain";
+			this.gbxMain.Size = new System.Drawing.Size(646, 358);
+			this.gbxMain.TabIndex = 0;
+			this.gbxMain.TabStop = false;
 			// 
-			// Sorting_button
+			// lblAmount
 			// 
-			this.Sorting_button.Location = new System.Drawing.Point(274, 19);
-			this.Sorting_button.Name = "Sorting_button";
-			this.Sorting_button.Size = new System.Drawing.Size(96, 23);
-			this.Sorting_button.TabIndex = 2;
-			this.Sorting_button.Text = "Отсортировать";
-			this.Sorting_button.UseVisualStyleBackColor = true;
-			this.Sorting_button.Click += new System.EventHandler(this.Sorting_button_Click);
+			this.lblAmount.AutoSize = true;
+			this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F);
+			this.lblAmount.ForeColor = System.Drawing.SystemColors.Control;
+			this.lblAmount.Location = new System.Drawing.Point(25, 50);
+			this.lblAmount.Name = "lblAmount";
+			this.lblAmount.Size = new System.Drawing.Size(47, 13);
+			this.lblAmount.TabIndex = 8;
+			this.lblAmount.Text = "Кол-во:";
 			// 
-			// TypeSorting_comboBox
+			// tbStep
 			// 
-			this.TypeSorting_comboBox.BackColor = System.Drawing.SystemColors.Info;
-			this.TypeSorting_comboBox.FormattingEnabled = true;
-			this.TypeSorting_comboBox.Location = new System.Drawing.Point(376, 21);
-			this.TypeSorting_comboBox.Name = "TypeSorting_comboBox";
-			this.TypeSorting_comboBox.Size = new System.Drawing.Size(164, 21);
-			this.TypeSorting_comboBox.TabIndex = 1;
-			this.TypeSorting_comboBox.Text = "Выбрать метод сортировки";
+			this.tbStep.Location = new System.Drawing.Point(126, 27);
+			this.tbStep.Maximum = 100;
+			this.tbStep.Minimum = 1;
+			this.tbStep.Name = "tbStep";
+			this.tbStep.Size = new System.Drawing.Size(390, 45);
+			this.tbStep.TabIndex = 4;
+			this.tbStep.TickFrequency = 10;
+			this.tbStep.TickStyle = System.Windows.Forms.TickStyle.Both;
+			this.tbStep.Value = 5;
+			this.tbStep.Scroll += new System.EventHandler(this.tbStep_Scroll);
 			// 
-			// Generate_button
+			// chartSorting
 			// 
-			this.Generate_button.Location = new System.Drawing.Point(132, 19);
-			this.Generate_button.Name = "Generate_button";
-			this.Generate_button.Size = new System.Drawing.Size(96, 23);
-			this.Generate_button.TabIndex = 0;
-			this.Generate_button.Text = "Сгенерировать";
-			this.Generate_button.UseVisualStyleBackColor = true;
-			this.Generate_button.Click += new System.EventHandler(this.Generate_button_Click);
+			this.chartSorting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			this.chartSorting.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			this.chartSorting.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			this.chartSorting.BorderSkin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			this.chartSorting.BorderSkin.PageColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+			chartArea1.AxisX.LabelStyle.Enabled = false;
+			chartArea1.AxisX.MajorGrid.Enabled = false;
+			chartArea1.AxisX.MajorTickMark.Enabled = false;
+			chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+			chartArea1.AxisY.MajorGrid.Enabled = false;
+			chartArea1.Name = "ChartArea1";
+			this.chartSorting.ChartAreas.Add(chartArea1);
+			this.chartSorting.Location = new System.Drawing.Point(6, 78);
+			this.chartSorting.Name = "chartSorting";
+			series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			series1.ChartArea = "ChartArea1";
+			series1.IsVisibleInLegend = false;
+			series1.Name = "Series1";
+			series1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			this.chartSorting.Series.Add(series1);
+			this.chartSorting.Size = new System.Drawing.Size(633, 274);
+			this.chartSorting.TabIndex = 6;
+			this.chartSorting.TabStop = false;
 			// 
-			// amt_NumUD
+			// nudAmount
 			// 
-			this.amt_NumUD.Location = new System.Drawing.Point(6, 22);
-			this.amt_NumUD.Minimum = new decimal(new int[] {
-            10,
+			this.nudAmount.BackColor = System.Drawing.SystemColors.Window;
+			this.nudAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.nudAmount.Font = new System.Drawing.Font("Modern No. 20", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.nudAmount.Location = new System.Drawing.Point(83, 48);
+			this.nudAmount.Minimum = new decimal(new int[] {
+            5,
             0,
             0,
             0});
-			this.amt_NumUD.Name = "amt_NumUD";
-			this.amt_NumUD.Size = new System.Drawing.Size(120, 20);
-			this.amt_NumUD.TabIndex = 5;
-			this.amt_NumUD.Value = new decimal(new int[] {
-            100,
+			this.nudAmount.Name = "nudAmount";
+			this.nudAmount.Size = new System.Drawing.Size(36, 19);
+			this.nudAmount.TabIndex = 0;
+			this.nudAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.nudAmount.Value = new decimal(new int[] {
+            50,
             0,
             0,
             0});
 			// 
-			// sorting_chart
+			// btnSorting
 			// 
-			chartArea2.Name = "ChartArea1";
-			this.sorting_chart.ChartAreas.Add(chartArea2);
-			this.sorting_chart.Location = new System.Drawing.Point(6, 78);
-			this.sorting_chart.Name = "sorting_chart";
-			series2.ChartArea = "ChartArea1";
-			series2.Name = "Series1";
-			this.sorting_chart.Series.Add(series2);
-			this.sorting_chart.Size = new System.Drawing.Size(534, 287);
-			this.sorting_chart.TabIndex = 6;
+			this.btnSorting.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F);
+			this.btnSorting.Location = new System.Drawing.Point(522, 19);
+			this.btnSorting.Name = "btnSorting";
+			this.btnSorting.Size = new System.Drawing.Size(96, 23);
+			this.btnSorting.TabIndex = 3;
+			this.btnSorting.Tag = "0";
+			this.btnSorting.Text = "Отсортировать";
+			this.btnSorting.UseVisualStyleBackColor = true;
+			this.btnSorting.Click += new System.EventHandler(this.Sorting_button_Click);
 			// 
-			// Main_Form
+			// cmbTypeSorting
+			// 
+			this.cmbTypeSorting.BackColor = System.Drawing.SystemColors.Info;
+			this.cmbTypeSorting.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.cmbTypeSorting.FormattingEnabled = true;
+			this.cmbTypeSorting.Items.AddRange(new object[] {
+            "Пузырёк",
+            "Вставка",
+            "Слияние"});
+			this.cmbTypeSorting.Location = new System.Drawing.Point(522, 48);
+			this.cmbTypeSorting.Name = "cmbTypeSorting";
+			this.cmbTypeSorting.Size = new System.Drawing.Size(96, 21);
+			this.cmbTypeSorting.TabIndex = 2;
+			this.cmbTypeSorting.Text = "Пузырёк";
+			this.cmbTypeSorting.SelectedIndexChanged += new System.EventHandler(this.cmbTypeSorting_SelectedIndexChanged);
+			// 
+			// btnGenerate
+			// 
+			this.btnGenerate.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F);
+			this.btnGenerate.Location = new System.Drawing.Point(24, 19);
+			this.btnGenerate.Name = "btnGenerate";
+			this.btnGenerate.Size = new System.Drawing.Size(96, 23);
+			this.btnGenerate.TabIndex = 1;
+			this.btnGenerate.Text = "Сгенерировать";
+			this.btnGenerate.UseVisualStyleBackColor = true;
+			this.btnGenerate.Click += new System.EventHandler(this.Generate_button_Click);
+			// 
+			// timerSort
+			// 
+			this.timerSort.Tick += new System.EventHandler(this.timerSort_Tick);
+			// 
+			// formMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(570, 479);
-			this.Controls.Add(this.Main_GroupBox);
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			this.ClientSize = new System.Drawing.Size(670, 382);
+			this.Controls.Add(this.gbxMain);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.Name = "Main_Form";
-			this.Text = "Visual-Sorting";
-			this.Load += new System.EventHandler(this.Form1_Load);
-			this.Main_GroupBox.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.amt_NumUD)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.sorting_chart)).EndInit();
+			this.Name = "formMain";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "VisualSorting";
+			this.gbxMain.ResumeLayout(false);
+			this.gbxMain.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.tbStep)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.chartSorting)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.GroupBox Main_GroupBox;
-		private System.Windows.Forms.ComboBox TypeSorting_comboBox;
-		private System.Windows.Forms.Button Generate_button;
-		private System.Windows.Forms.Button Sorting_button;
-		private System.Windows.Forms.DataVisualization.Charting.Chart sorting_chart;
-		private System.Windows.Forms.NumericUpDown amt_NumUD;
+		private System.Windows.Forms.GroupBox gbxMain;
+		private System.Windows.Forms.ComboBox cmbTypeSorting;
+		private System.Windows.Forms.Button btnGenerate;
+		private System.Windows.Forms.Button btnSorting;
+		private System.Windows.Forms.DataVisualization.Charting.Chart chartSorting;
+		private System.Windows.Forms.NumericUpDown nudAmount;
+		private System.Windows.Forms.Timer timerSort;
+		private System.Windows.Forms.TrackBar tbStep;
+		private System.Windows.Forms.Label lblAmount;
 	}
 }
 
