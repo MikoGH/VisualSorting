@@ -30,8 +30,8 @@ namespace Visual_Sorting
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.gbxMain = new System.Windows.Forms.GroupBox();
 			this.lblAmount = new System.Windows.Forms.Label();
 			this.tbStep = new System.Windows.Forms.TrackBar();
@@ -95,22 +95,22 @@ namespace Visual_Sorting
 			this.chartSorting.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
 			this.chartSorting.BorderSkin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
 			this.chartSorting.BorderSkin.PageColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
-			chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-			chartArea1.AxisX.LabelStyle.Enabled = false;
-			chartArea1.AxisX.MajorGrid.Enabled = false;
-			chartArea1.AxisX.MajorTickMark.Enabled = false;
-			chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-			chartArea1.AxisY.MajorGrid.Enabled = false;
-			chartArea1.Name = "ChartArea1";
-			this.chartSorting.ChartAreas.Add(chartArea1);
+			chartArea5.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+			chartArea5.AxisX.LabelStyle.Enabled = false;
+			chartArea5.AxisX.MajorGrid.Enabled = false;
+			chartArea5.AxisX.MajorTickMark.Enabled = false;
+			chartArea5.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+			chartArea5.AxisY.MajorGrid.Enabled = false;
+			chartArea5.Name = "ChartArea1";
+			this.chartSorting.ChartAreas.Add(chartArea5);
 			this.chartSorting.Location = new System.Drawing.Point(6, 78);
 			this.chartSorting.Name = "chartSorting";
-			series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
-			series1.ChartArea = "ChartArea1";
-			series1.IsVisibleInLegend = false;
-			series1.Name = "Series1";
-			series1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
-			this.chartSorting.Series.Add(series1);
+			series5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			series5.ChartArea = "ChartArea1";
+			series5.IsVisibleInLegend = false;
+			series5.Name = "Series1";
+			series5.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(51)))), ((int)(((byte)(61)))));
+			this.chartSorting.Series.Add(series5);
 			this.chartSorting.Size = new System.Drawing.Size(633, 274);
 			this.chartSorting.TabIndex = 6;
 			this.chartSorting.TabStop = false;
@@ -121,6 +121,11 @@ namespace Visual_Sorting
 			this.nudAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.nudAmount.Font = new System.Drawing.Font("Modern No. 20", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.nudAmount.Location = new System.Drawing.Point(83, 48);
+			this.nudAmount.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
 			this.nudAmount.Minimum = new decimal(new int[] {
             5,
             0,
@@ -156,7 +161,8 @@ namespace Visual_Sorting
 			this.cmbTypeSorting.Items.AddRange(new object[] {
             "Пузырёк",
             "Вставка",
-            "Слияние"});
+            "Шейкер",
+            "Пирамида"});
 			this.cmbTypeSorting.Location = new System.Drawing.Point(522, 48);
 			this.cmbTypeSorting.Name = "cmbTypeSorting";
 			this.cmbTypeSorting.Size = new System.Drawing.Size(96, 21);
